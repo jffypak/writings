@@ -1,4 +1,5 @@
 ---
+title: "In an AI World, CRUD is Not Enough"
 tags:
   - coding
   - ai-agents
