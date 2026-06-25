@@ -1,5 +1,6 @@
 ---
 title: "Money Is the New Religion (And It's a Bad One)"
+publish_date: 2026-06-25
 tags:
   - philosophy
   - spirituality

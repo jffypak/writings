@@ -55,11 +55,7 @@ Rails + Sidekiq
 Django + Celery
 DB + Redis + "just one more worker"
 
-<<<<<<< Updated upstream
-But AI Agents are pushing these systems past their comfort zones. I've seen it at GitLab and I've heard about problems that companies have had with Celery. They just aren't natively built for 
-=======
 But AI Agents are pushing these systems past their comfort zones. I've seen it at GitLab and I've heard about problems that companies have had with Celery. They just aren't natively built for
->>>>>>> Stashed changes
 
 - Long-lived streams
 - Event-driven orchestration

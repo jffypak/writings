@@ -1,5 +1,6 @@
 ---
 title: "Context After the Window: Topic Graphs, Semantic Pointers, and Context Selection"
+publish_date: 2026-06-25
 tags:
   - coding
   - ai-agents

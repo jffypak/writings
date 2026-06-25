@@ -1,5 +1,6 @@
 ---
 title: "Memory After CRUD: Pointers, DAGs, and Branching in Agentic Systems"
+publish_date: 2026-06-25
 tags:
   - coding
   - ai-agents

@@ -1,5 +1,6 @@
 ---
 title: "Why Streaming Breaks Traditional Web Assumptions"
+publish_date: 2026-06-25
 tags:
   - coding
   - ai-agents

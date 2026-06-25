@@ -1,5 +1,6 @@
 ---
 title: "The Control Plane and Execution Plane Split (Why AI Systems Are Forcing a New Architecture)"
+publish_date: 2026-06-25
 tags:
   - coding
   - ai-agents

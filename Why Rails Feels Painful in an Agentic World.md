@@ -1,5 +1,6 @@
 ---
 title: "Why Rails Feels Painful in an Agentic World"
+publish_date: 2026-06-25
 tags:
   - coding
   - ai-agents
