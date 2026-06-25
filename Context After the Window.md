@@ -50,7 +50,7 @@ Replace "conversation = list" with **conversation = graph of topics**.
 - **Edges**: relationships (depends_on, refines, contrasts_with)
 - **Metadata**: scope, granularity, freshness, confidence
 
-```css
+```text
 [Architecture]
    ├─ [Control vs Execution]
    │     ├─ [Streaming]
@@ -91,7 +91,6 @@ Example pointer:
   "branch": "alternative-B",
   "time": "milestones"
 }
-
 ```
 
 This says:
