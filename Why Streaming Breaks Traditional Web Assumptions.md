@@ -6,304 +6,66 @@ tags:
   - ai-agents
 ---
 
-Streaming doesn't introduce new problems.
-It exposes the ones we've been ignoring.
+Streaming doesn't create new problems. It shows you the ones you already had.
 
-For most of the web's history, systems were built around a simple, comforting lie:
+Most of the web was built on a comfortable story. A request comes in. Some work happens. A response goes out. The system rests.
 
-> A request comes in.
-> Some work happens.
-> A response goes out.
-> The system rests.
+Agents, live logs, progress updates, token streams, live diffs. None of them fit that story. And once you start streaming, a lot of old assumptions fall over quietly.
 
-Streaming breaks that lie — not because it's exotic, but because it's _honest_ about how work actually happens.
+## Work isn't atomic anymore
 
-AI agents, real-time logs, progress updates, token streams, and live diffs don't fit neatly inside the old mental model. And once you introduce streaming, a lot of familiar assumptions quietly collapse.
+Classic web apps assume work is short, bounded, synchronous, and done before the response goes out. Even background jobs are the same request, just later.
 
----
+The moment you stream, you're admitting the work is still going. The outcome isn't known yet. Partial results mean something. Time matters.
 
-## The Traditional Web Assumption: Work Is Atomic
+## Time shows up
 
-Classic web architectures assume that work is:
+In a normal web app, time mostly hides. A request is fast or slow. A job is queued or done. A spinner covers the wait.
 
-- Short-lived
-- Bounded
-- Synchronous
-- Completed before the response is sent
+Streaming puts time on screen. You see progress. You feel latency. You notice when it stalls or retries.
 
-Even background jobs are often treated as:
+CRUD frameworks are built to answer what the current state is. Streaming asks what's happening right now. Those are different questions.
 
-> "The same request — just later."
+## The request never finishes
 
-Streaming refuses to play along.
+Web frameworks organize everything around the request. Resources, concurrency, errors, logging, capacity planning.
 
-The moment you stream, you admit:
+A stream keeps the connection open. It holds a worker or a thread. It lives way longer than a normal request, overlaps other work, and can't be rolled back.
 
-- The work is ongoing
-- The outcome is not yet known
-- Partial results are meaningful
-- Time matters
+The framework keeps asking when the request finishes. Streaming's answer is it doesn't. It progresses.
 
-That single admission changes everything.
+## Failure becomes something you watch
 
----
+Without streaming, failure is binary. You got a response or you got an error.
 
-## Streaming Makes Time a First-Class Concept
+With streaming, failure is partial output. A gap in the stream. A retry halfway through. Things slowing down and then eventually working. The user watches all of it.
 
-In traditional web apps, time is mostly invisible:
+So you need idempotency, a way to resume, explicit state transitions, and a clear owner for retries. Most web stacks weren't built for that.
 
-- Requests are "fast" or "slow"
-- Background jobs are "queued" or "done"
-- Delays are hidden behind spinners
+## Backpressure was always there
 
-Streaming makes time explicit.
+Slow consumers slow down producers. Overloaded systems stall. Congestion spreads outward. Request/response hides this. Requests time out, queues grow quietly, and then things fall over all at once.
 
-When you stream:
+Streaming makes you deal with it. How many streams can we hold? What happens when a client is slow? Who owns flow control?
 
-- You see progress
-- You feel latency
-- You notice pauses
-- You observe stalls and retries
+Those questions were always there. Streaming just stops letting you ignore them.
 
-This is uncomfortable for systems designed to pretend time doesn't exist.
+## Stateless was never really true
 
-CRUD frameworks are optimized to answer:
+Statelessness works when requests are independent, responses are final, and context is short.
 
-> "What is the current state?"
+A stream has a before and an after. Progress piles up. Order matters. Interruptions matter. You're managing state the second you stream. The only question is whether that state is explicit and visible, or scattered across threads and jobs and retries.
 
-Streaming forces you to answer:
+## Why it hurts in Rails, Django, and Express
 
-> "What is happening _right now_?"
+These frameworks aren't broken. They're built for a world where work finishes fast, responses are discrete, time is hidden, and failure is rare. Streaming breaks all of that. So you get thread exhaustion, starved workers, awkward async hacks, ad-hoc buffering, and "just one more queue."
 
-Those are different questions.
+The pain is telling you something. Streaming belongs in the execution plane, where work runs and time is real and failure is expected. Put it in the control plane and capacity falls apart. Split the two and a stream is just another event source.
 
----
+## AI made it unavoidable
 
-## Streaming Breaks the Request Boundary
+We had streaming before. Chat, notifications, logs. AI made it the default. Tokens stream. Long tasks are normal. Partial output is useful. People expect to see what's happening instead of staring at a spinner.
 
-The request boundary is sacred in traditional web frameworks.
+If your system already models flow, progress, failure, and time, streaming feels natural. If it assumes everything finishes instantly, it's going to hurt.
 
-It defines:
-
-- Resource allocation
-- Concurrency
-- Error handling
-- Observability
-- Capacity planning
-
-Streaming punches a hole straight through it.
-
-A streamed response:
-
-- Keeps connections open
-- Ties up workers or threads
-- Lives longer than typical requests
-- Overlaps with other work
-- Cannot be "rolled back"
-
-This is why streaming inside request-oriented frameworks feels fragile.
-
-The framework is still asking:
-
-> "When does this request finish?"
-
-Streaming answers:
-
-> "It doesn't. It _progresses_."
-
----
-
-## Streaming Turns Failure from an Exception into a State
-
-In a non-streaming world:
-
-- Success = response returned
-- Failure = exception or error code
-
-Streaming breaks this binary.
-
-Failures become:
-
-- Partial output
-- Gaps in the stream
-- Retries mid-execution
-- Degraded progress
-- Eventual success after visible failure
-
-You can't hide failure anymore — the user sees it happen.
-
-This is why streaming systems require:
-
-- Idempotency
-- Resume semantics
-- Explicit state transitions
-- Clear ownership of retries
-
-Traditional web stacks were not designed for this level of honesty.
-
----
-
-## Streaming Exposes Backpressure
-
-Backpressure is always there.
-Streaming just makes it visible.
-
-When you stream:
-
-- Slow consumers slow producers
-- Overloaded systems stall
-- Congestion propagates outward
-
-In request/response systems, backpressure is masked:
-
-- Requests time out
-- Queues silently grow
-- Systems fall over abruptly
-
-Streaming forces you to confront:
-
-- How many streams can we handle?
-- What happens when clients are slow?
-- Who owns flow control?
-
-These questions don't go away if you ignore them.
-Streaming just stops letting you.
-
----
-
-## Streaming Collapses the Illusion of "Statelessness"
-
-Statelessness works when:
-
-- Requests are independent
-- Responses are final
-- Context is short-lived
-
-Streaming is inherently stateful:
-
-- There is a "before" and "after"
-- Progress accumulates
-- Order matters
-- Interruptions matter
-
-Once you stream, you're already managing state — whether you admit it or not.
-
-The difference is whether that state is:
-
-- Explicit and observable
-    or
-- Implicit and scattered across threads, jobs, and retries
-
-Streaming punishes the second approach.
-
----
-
-## Why Streaming Feels So Painful in Traditional Web Frameworks
-
-Frameworks like Rails, Django, and Express aren't broken.
-
-They're optimized for a world where:
-
-- Work finishes quickly
-- Responses are discrete
-- Time is abstracted away
-- Failure is rare
-
-Streaming violates all of that.
-
-So you see symptoms:
-
-- Thread exhaustion
-- Worker starvation
-- Awkward async hacks
-- Ad-hoc buffering
-- "Just one more queue"
-
-The pain isn't accidental.
-It's diagnostic.
-
----
-
-## Streaming Reveals the Need for an Execution Plane
-
-This is where the Control Plane / Execution Plane split becomes unavoidable.
-
-Streaming belongs to the **execution plane**:
-
-- Where work runs
-- Where progress happens
-- Where time is real
-- Where failure is expected
-
-Trying to host streaming in the control plane leads to:
-
-- Capacity collapse
-- Complexity explosions
-- Hidden coupling
-
-Once execution is separate, streaming stops being scary.
-
-It becomes just another event source.
-
----
-
-## Why AI Made This Impossible to Ignore
-
-We've had streaming before:
-
-- Chat
-- Notifications
-- Logs
-
-AI made it unavoidable because:
-
-- Token streaming is the _default_
-- Long-running tasks are normal
-- Partial output is valuable
-- Users expect visibility, not spinners
-
-AI didn't invent streaming.
-
-It just removed our ability to pretend we didn't need it.
-
----
-
-## The Deeper Truth
-
-Streaming doesn't break systems.
-
-> **Streaming reveals whether your system was telling the truth about how it works.**
-
-If your architecture assumes:
-
-- Instant completion
-- Atomic success
-- Invisible time
-
-Streaming will hurt.
-
-If your architecture already models:
-
-- Flow
-- Progress
-- Failure
-- Time
-
-Streaming feels natural.
-
----
-
-## The Takeaway
-
-The future web isn't "real-time" because it's trendy.
-
-It's real-time because:
-
-- Systems act autonomously
-- Work unfolds over time
-- Users want to see what's happening
-- And pretending otherwise no longer works
-
-Streaming is not a feature.
-
-It's a forcing function.
+AI didn't invent streaming. It just took away our ability to pretend we didn't need it.

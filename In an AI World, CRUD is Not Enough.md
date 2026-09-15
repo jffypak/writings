@@ -6,92 +6,60 @@ tags:
   - ai-agents
 ---
 
-For the last 15 years, being a 'good engineer' mostly meant one thing:
+For the last 15 years, being a good engineer mostly meant one thing. Get good at CRUD.
 
-> Get good at CRUD
+That meant everything from the frontend to the API endpoints to the models down in the backend. You knew how to model data, wrap it in transactions, and expose it with clean APIs. In a web 2.0 world, that was enough.
 
-This meant everything from the frontend, API endpoints, to the models down in the backend. You knew how to model data, wrap it in transactions, and expose them with clean APIs. In a web 2.0 world, that was enough. 
+But AI agents are quickly making this expertise obsolete. Replacing it are queues, events, graphs, and workflows. A new center of gravity has cometh, and engineers have to adapt.
 
-But the rise of **AI agents** is quickly making this expertise obsolete. Replacing it are queues, events, graphs, and workflows. A new center of gravity has cometh, and the modern engineer must adapt. 
+## CRUD is a worldview
 
-## CRUD is a worldview, not just an API style
+CRUD isn't just create, read, update, delete. It's a way of thinking. Work is short-lived. Requests complete deterministically. Failure is exceptional. State is the main abstraction. Time is an implementation detail.
 
-CRUD isnt' just "create, read, update, delete." It's a way of thinking. 
+AI agents don't behave this way. They run for seconds, minutes, or hours. They fail partway and recover. They fan out to other tools and services. They produce intermediate results. They get interrupted, resumed, or redirected. They make progress even when nobody is watching.
 
-- Work is short-lived
-- Requests complete deterministically
-- Failure is exceptional
-- State is the primary abstraction
-- Time is an implementation detail. 
+Agents live in time, not transactions.
 
-But AI Agents don't behave this way. They run for seconds, minutes, or hours. They fail partially and recover. They fan out to other tools and services. THey produce intermediate results. The processes get interrupted, resumed, or reidrected. They make progress even when nobody is watching. 
-
-In other words: agents live in time, not transactions. 
-
-CRUD doesn't have a native way to express that something failed, but only halfway. It doesn't tell you to try again later. It can't resume from step 4. So we've faked it with status columns, retry flags, cron jobs, background jobs triggered by request-driven systems. And it's worked until it doesn't. 
+CRUD has no native way to say something failed, but only halfway. It can't tell you to try again later. It can't resume from step 4. So we've faked it with status columns, retry flags, cron jobs, and background jobs kicked off by request-driven systems. And it's worked, until it doesn't.
 
 ## Queues model reality better than tables
 
-Queues, events, and workflows are built around a different premise:
+Queues, events, and workflows start from a different premise. Work is something that happens, not something that exists.
 
-> work is something that happens, not something that exists. 
+In a queue-first world, time is explicit. Failure is expected. Retries are normal. Partial progress counts. Backpressure is visible. Concurrency is on purpose.
 
-In a queue-first world:
-
-- Time is explicit
-- Failure is expected
-- Retries are normal
-- Partial progress is first-class
-- Backpressure is visible 
-- Concurrency is intentional
-
-This isn't accidental. Queues exist because the real world is messy, and agentic systems are messy by default. They're systems modeled after human thinking after all, and agentic systems are nowhere near as sophisticated as how humans think. They're just faster at the simpler tasks. 
+That isn't an accident. Queues exist because the real world is messy, and agentic systems are messy by default. They're modeled after human thinking after all, and they're nowhere near as sophisticated as how humans think. They're just faster at the simpler tasks.
 
 ## Why this is surfacing now
 
-For years, we could get away with bending CRUD systems into shape. 
+For years we could get away with bending CRUD systems into shape. Rails + Sidekiq. Django + Celery. DB + Redis + "just one more worker."
 
-Rails + Sidekiq
-Django + Celery
-DB + Redis + "just one more worker"
+AI agents are pushing these systems past their comfort zones. I've seen it at GitLab and I've heard about the problems companies have had with Celery. These stacks just aren't built for long-lived streams, event-driven orchestration, stateful async workflows, non-deterministic execution, or a human stepping in halfway through.
 
-But AI Agents are pushing these systems past their comfort zones. I've seen it at GitLab and I've heard about problems that companies have had with Celery. They just aren't natively built for
+You can feel the strain right away. Threads get tied up. Retries get subtle. Race conditions multiply. Observability turns into guesswork.
 
-- Long-lived streams
-- Event-driven orchestration
-- Stateful async workflows
-- Non-deterministic execution
-- Human-in-the-loop interruption
+It makes engineering look bad. But the architecture is lying about what the system really is.
 
-You can feel the strain immediately. Threads get tied up, reties get subtle and race conditions multiply. Not to leave out that observability becomes guesswork. 
+## Control plane vs execution plane
 
-It makes engineering look bad, but the architecture is lying about what the system really is. 
+It's not either/or. The pattern I see emerging uses both.
 
-## The Right Mental Model: Control plane vs Execution Plane
+CRUD is the control plane. Queues and workflows are the execution plane.
 
-It's not an either/or choice. The emerging pattern involves both CRUD and Queues/Workflows. 
+The control plane handles config, auth, permissions, canonical state. It answers what is true.
 
-CRUD = control plane
-Queues / workflows = execution plane
+The execution plane handles agents, tasks, retries, streaming progress. It answers what is happening.
 
-The control plae handles configs, auth, permissions, canonical state. It answers the question: what is true? 
+AI agents live almost entirely in the execution plane.
 
-The execution plane handles agents, tasks, retries, streaming progress. It answers the question: what is happening? 
+## This is a skill shift
 
-And all AI agents live almost entirely in the execution plane. 
+To step into this world, I've had to change how I think. It isn't so much learning Kafka or switching frameworks, like when we all had to learn React or GraphQL.
 
-## This is a skill shift, not a tool shift. 
+It's learning to think in state machines instead of controllers. Messages instead of mutations. Idempotency instead of transactions. Compensation instead of rollback. Visibility instead of hope.
 
-To step into this new world, I've noticed that I have had to take on a mindset shift. It isn't so much "learning Kafka" or "switching frameworks" as it once was when we all had to learn React or GQL. 
+Engineers who stay CRUD-only will still be useful. But I suspect AI coding assistants will get really good at writing code for these systems, so those engineers will get pushed to the edges.
 
-It's about learning to think in: 
+Understanding queues, events, and workflows will shape the core. AI systems are going to force us to model reality as it actually behaves.
 
-- state machines instead of controllers
-- messages instead of mutations
-- idempotency instead of transactions
-- compensation instead of rollback
-- visibility instead of hope. 
-
-Engineers who stay CRUD-only will still be useful, but I suspect a lot of these AI coding assistants will get really good at writing code for these systems. So these engineers will be increasingly confined to the edges of the systems. 
-
-Understanding queues, events, and workflows will shape the core. Flow mastery will define the next era of software because AI systems will force us to model reality as it actually behaves. Not atomically, but asynchronously. 
+Not atomically, but asynchronously.

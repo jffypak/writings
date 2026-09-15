@@ -7,64 +7,54 @@ tags:
   - economics
 ---
 
-I've been reading Paul Kingsnorth's *Against the Machine*, and one idea from it has been rattling around my head for weeks. It's the kind of idea that, once you see it, you can't unsee it. It reframes everything — politics, tech, the general feeling that something is deeply off.
+I've been reading Paul Kingsnorth's *Against the Machine*, and one idea has been stuck in my head for weeks.
 
-The idea is this: Western civilization was built around a sacred center — Christendom — and that center has collapsed. Not suddenly. Slowly, over centuries, like a building whose foundation crumbles while the walls stay standing. We kept the structures. We drained out the meaning.
+Western civilization was built around a sacred center. Christendom. That center collapsed. Slowly, over centuries, like a building whose foundation crumbles while the walls stay up. We kept the structures and drained out the meaning.
 
-And into that vacuum, money rushed in.
+Money rushed into the gap.
 
-## Money as God
+## Money as god
 
-This isn't a metaphor. It's a structural observation. Money functions as a religion in almost every way that matters.
+Money works like a religion in almost every way that matters.
 
-It has **universal scope** — a shared value system that works across every culture, every context, every border. It **demands sacrifice** — your time, your health, your relationships, your planet. It **converts everything** into comparable, exchangeable units. A sunset and a surgery and a semester of college all get reduced to the same denomination.
+It's universal. It works in every culture and across every border. It demands sacrifice. Your time, your health, your relationships, the planet. It turns everything into the same units. A sunset, a surgery, and a semester of college all get priced in the same currency. It claims to be neutral while it decides what gets valued and who holds power. It punishes heresy. Try opting out and see what happens. And it promises salvation. Security, freedom, dignity. Money is the only road there.
 
-It **claims neutrality while shaping outcomes**. Money pretends to be a simple medium of exchange, but it determines what gets valued, who holds power, and which futures become possible.
+The part Kingsnorth helped me see is that religion wasn't just belief. It answered a practical question most of us don't know we're asking. What should I do today?
 
-It **punishes heresy**. Try opting out. Reject the accumulation game and watch what happens — poverty, social exclusion, loss of dignity. The system doesn't tolerate apostates.
+The old order had an answer. Go to work, care for your family, keep the sabbath, serve your community, fear God. It connected your Tuesday morning to something eternal.
 
-And most importantly, it **promises salvation**. Security. Freedom. Dignity. These are the secular equivalents of redemption, and money is the only path to them.
+Now the answer is make money so you can survive and maybe thrive. That's the whole liturgy.
 
-Here's the thing Kingsnorth helped me see: religion wasn't just about belief. It answered a daily, practical question that most of us don't even realize we're asking: *What should I do today?*
+## Why it's a bad one
 
-The sacred order used to answer that. Go to work, care for your family, observe the sabbath, serve your community, fear God. The answer had texture and weight. It connected your Tuesday morning to something eternal.
+Money can't produce the virtues it needs to keep working.
 
-Now? The answer is: *Make money so you can survive and potentially thrive.* That's it. That's the whole liturgy.
+A real sacred framework answers the big questions. What makes a life meaningful? What deserves sacrifice? How do you suffer with dignity? What shouldn't you do even when you can?
 
-## Why It's a Bad Religion
+Money has nothing to say about any of that. It optimizes. It extracts. It scales. It can't tell you why you're alive or what matters when the optimizing stops working.
 
-The problem isn't that money is powerful. The problem is that money cannot generate the virtues it requires to function.
+Kingsnorth pulls from Nietzsche here. If we can't bear the death of God, we'll replace God with something worse. I think that's what happened. We didn't become calm rationalists. We became money's congregation, sacrificing without knowing what we're worshipping.
 
-A real sacred framework does more than organize behavior — it answers ultimate questions. What makes life meaningful? What truly deserves sacrifice? How do you bear suffering with dignity? What should not be done, even when you can do it?
+You can feel it. Universities chasing rankings instead of wisdom. Hospitals chasing throughput instead of care. The neighborhood barbershop turning into a chain, because the point was never the haircut. It was the community. Community doesn't scale. Money does.
 
-Money has nothing to say about any of this. It optimizes. It extracts. It scales. But it cannot tell you why you're alive or what matters when the optimization stops working.
+## Once you see it
 
-Kingsnorth draws from Nietzsche here — the warning that if we lack the strength to bear the consequences of God's death, we'll replace divinity with something worse. And that's exactly what happened. We didn't become rational secularists calmly navigating an indifferent universe. We became money's congregation, performing sacrifice and devotion without knowing what we're worshipping or why.
+Politics. The culture wars look less like policy fights and more like grief. People aren't really fighting about pronouns or gas stoves. They lost a shared sacred story and don't have words for that, so they lash out. It looks a lot like Babel. A civilization that chased infinite growth and total mastery and now can't speak the same language.
 
-And you can feel this everywhere. The hollowness of institutions that maintain their form while their animating purpose has died. Universities that optimize for rankings instead of wisdom. Hospitals that optimize for throughput instead of care. A neighborhood barbershop that becomes a standardized chain because the point was never the haircut — it was the community — but community doesn't scale and money does.
+Strongmen. Authoritarians don't come from strength. They come from this vacuum. When the old story dies and nobody offers a new one, nostalgia is the only thing left to sell. "Make America Great Again" is more prayer than platform. A plea to go back to an order that felt coherent, even if it was unjust.
 
-## The Lens That Explains Everything
+Tech. The AI obsession looks different too. Some of the people building it are building a replacement god. People already use it like an oracle, a conscience, a confessor. But AI fails as a god for the same reason money does. A god has to be able to say no in a way that means something. AI can't. It can't suffer. It can't die. It can't love or forgive. It's authority without a body, which makes it authority without accountability.
 
-Once I started seeing this, I couldn't stop.
-
-**Politics:** The culture wars make a lot more sense as the symptoms of a civilization experiencing the death throes of its organizing principle, not as rational disagreements about policy. People aren't really fighting about pronouns or gas stoves. They're grieving the loss of a shared sacred story and lashing out because they don't have language for that grief. The intensity of it all — the apocalyptic tone, the inability to communicate across divides — it looks a lot like the Tower of Babel. A civilization that pursued infinite growth and total mastery and now literally cannot speak the same language.
-
-**World events:** Authoritarian leaders don't emerge from strength. They emerge from this exact vacuum. When the old story dies and no one offers a compelling new one, nostalgia is the only product left to sell. "Make America Great Again" isn't a policy platform. It's a prayer — a plea to return to a sacred order that felt coherent, even if it was unjust. The reactionary movements gaining ground worldwide aren't signs of a new order. They're the death spasms of the old one.
-
-**Tech:** Silicon Valley's AI obsession looks different through this lens too. The techno-elite aren't just building products. They're building a replacement god. AI has all the trappings: omniscience, judgment, salvation narratives. People already use it in prayer-shaped ways — as oracle, conscience, confessor. But AI fails as a god for the same reason money does. A genuine god must be able to say "no" in a morally meaningful way. AI cannot. It has no intrinsic values. It cannot suffer. It cannot die. It cannot love. It cannot forgive. It's authority without embodiment — and that makes it authority without accountability.
-
-## What Actually Fills the Void
+## What fills the void
 
 So if money is a bad religion and AI is a bad god, what's left?
 
-Kingsnorth's answer — and the one I keep coming back to — is that meaning requires things that don't scale. It requires embodiment: being a physical person who can suffer and die and make irreversible choices. It requires moral risk: having skin in the game, bearing real consequences for being wrong. It requires practice and tradition: not inventing values from scratch each morning but inheriting and transmitting something across generations. And it requires humility before limits — ecological, technological, moral, human.
+Kingsnorth's answer, and the one I keep coming back to, is that meaning needs things that don't scale. A body that can suffer and die and make choices it can't undo. Skin in the game. Traditions you inherit instead of inventing your values from scratch every morning. Humility about limits you didn't set.
 
-Meaning, in other words, lives in the places money empties out. It lives in the barbershop before it becomes a chain. In the craft practiced for its own sake. In the community small enough to hold you accountable. In the service done without needing credit.
+Meaning lives in the places money empties out. The barbershop before it became a chain. Craft done for its own sake. A community small enough to hold you accountable. Service without needing credit.
 
-The philosophers converge on this. Aristotle said meaning comes from excellence practiced over time within community. Kierkegaard said it begins where certainty ends — personal, risky, non-transferable. Camus said it's dignity amid absurdity, lucid action without false certainties. They all point to the same thing: meaning emerges from finite, embodied beings who commit, risk, and humble themselves before limits they didn't create.
+Aristotle, Kierkegaard, and Camus all land somewhere close. Meaning comes from finite people who commit, take risks, and accept limits they didn't make.
 
-We are not the authors of meaning. We are its caretakers.
+I don't think that means everyone needs to go back to church. Maybe some people do. I think it means we stop pretending money or algorithms can answer the questions only a lived life can. What's worth keeping? What deserves reverence? What should I do today, not to optimize, but to live well?
 
-I don't think that means we need to go back to church — though for some people, maybe it does. I think it means we need to stop pretending that money, or algorithms, or any system can answer the questions that only lived human experience can answer. What is worth preserving? What deserves reverence? What should I do today — not to optimize, but to live well?
-
-Those questions don't have efficient answers. That might be the point.
+Those questions don't have efficient answers. Maybe that's the point.
